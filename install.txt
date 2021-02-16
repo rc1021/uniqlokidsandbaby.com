@@ -1,0 +1,4 @@
+sudo docker build -t nginx-certbot .
+sudo docker run -v $(pwd)/letsencrypt:/etc/letsencrypt --name web --restart=always -p 80:80 -d nginx-certbot
+sudo docker exec -ti sh
+certbot --nginx -d uniqlokidsandbaby.com -d www.uniqlokidsandbaby.com
